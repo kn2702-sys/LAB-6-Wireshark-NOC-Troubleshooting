@@ -9,6 +9,8 @@ to look at, what it proves, and the one-liner you'd say on a bridge call.
 > DHCP, TCP handshakes, ICMP, and failure signatures (retransmissions,
 > resets, unreachable) — with a written RCA for a blackholed connection.*
 
+**Lab series:** [Lab 1](https://github.com/kn2702-sys/enterprise-vlan-lab) · [Lab 2](https://github.com/kn2702-sys/dhcp-dns-failure-lab) · [Lab 3](https://github.com/kn2702-sys/LAB-3-Multi-Router-OSPF-Network) · [Lab 4](https://github.com/kn2702-sys/LAB-4-ACL-NAT-Internet-Edge) · [Lab 5](https://github.com/kn2702-sys/LAB-5-Site-to-Site-VPN-Firewall) · **Lab 6** · [Lab 7](https://github.com/kn2702-sys/LAB-7-NOC-Incident-Simulation) · [Lab 8](https://github.com/kn2702-sys/LAB-8-AWS-VPC-Networking)
+
 ## The captures
 
 | # | File | Packets | What it proves you can read |
