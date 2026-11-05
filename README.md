@@ -15,11 +15,11 @@ to look at, what it proves, and the one-liner you'd say on a bridge call.
 
 | # | File | Packets | What it proves you can read |
 |---|------|---------|----------------------------|
-| 1 | `captures/01-dns-query-response.pcap` | 2 | Query/response pairing, qtype, rcode |
-| 2 | `captures/02-dhcp-dora.pcap` | 4 | DORA sequence, transaction IDs, lease options |
-| 3 | `captures/03-tcp-handshake.pcap` | 3 | SYN → SYN-ACK → ACK, seq/ack chaining |
-| 4 | `captures/04-icmp-echo.pcap` | 2 | Echo request/reply pairing, RTT baseline |
-| 5 | `captures/05-failed-connection.pcap` | 8 | **Three failure signatures** — see below |
+| 1 | `01-dns-query-response.pcap` | 2 | Query/response pairing, qtype, rcode |
+| 2 | `02-dhcp-dora.pcap` | 4 | DORA sequence, transaction IDs, lease options |
+| 3 | `03-tcp-handshake.pcap` | 3 | SYN → SYN-ACK → ACK, seq/ack chaining |
+| 4 | `04-icmp-echo.pcap` | 2 | Echo request/reply pairing, RTT baseline |
+| 5 | `05-failed-connection.pcap` | 8 | **Three failure signatures** — see below |
 
 Open any of them in Wireshark (File → Open). They were crafted
 packet-by-packet with realistic headers and timing, so they dissect exactly
@@ -39,8 +39,7 @@ The written RCA for Attempt A: [docs/RCA.md](docs/RCA.md).
 ## Repository contents
 
 ```
-captures/
-  01-dns-query-response.pcap
+01-dns-query-response.pcap                       # the 5 captures live at repo root
   02-dhcp-dora.pcap
   03-tcp-handshake.pcap
   04-icmp-echo.pcap
@@ -62,6 +61,7 @@ scripts/
 3. Capture 03. Trace the seq/ack chain with a pen. Then read
    [docs/03-TCP.md](docs/03-TCP.md) — including *why* the handshake exists.
 4. Capture 04, filter `icmp`. Note the 1.2ms RTT — that's your baseline.
+   Then read [docs/04-ICMP.md](docs/04-ICMP.md).
 5. Capture 05. **Before** reading the guide, write down what you think
    each attempt's root cause is. Then check yourself against
    [docs/05-FAILED-CONNECTION.md](docs/05-FAILED-CONNECTION.md).
