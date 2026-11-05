@@ -8,7 +8,7 @@ dissects them exactly like live traffic.
 Usage:
     python3 scripts/generate_captures.py
 
-Output (captures/):
+Output (repo root):
     01-dns-query-response.pcap     DNS query + response (A record)
     02-dhcp-dora.pcap              DHCP Discover/Offer/Request/ACK
     03-tcp-handshake.pcap          TCP 3-way handshake (SYN, SYN-ACK, ACK)
@@ -26,7 +26,7 @@ from scapy.all import (  # noqa: F401  (explicit re-export for clarity)
     wrpcap, rdpcap, mac2str,
 )
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "captures"
+OUT_DIR = Path(__file__).resolve().parent.parent  # repo root — captures live alongside README.md
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ---------------------------------------------------------------------------
